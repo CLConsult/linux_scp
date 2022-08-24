@@ -63,6 +63,6 @@ if __name__ == '__main__':
 
     print(f"Realiando copia para pasta diária: {dest_dir}")
 
-    copytree(dest_path, dest_dir)
+    copytree(dest_path, dest_dir, ".dat")
 
     print("fim")
