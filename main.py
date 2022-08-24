@@ -42,6 +42,9 @@ if __name__ == '__main__':
 
     ssh = SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+    print(f"Conectando ao host: {host} Porta: {port} Usuario: {user} Senha: {passwd}")
+
     ssh.connect(host, port=port, username=user, password=passwd)
 
     with SCPClient(ssh.get_transport(), sanitize=lambda x: x) as scp:
