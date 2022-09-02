@@ -55,7 +55,8 @@ if __name__ == '__main__':
     with SCPClient(ssh.get_transport(), sanitize=lambda x: x) as scp:
 
         try:
-            scp.get(remote_path=file_path, local_path=dest_path)
+            scp.get(remote_path=file_path, local_path=dest_path, preserve_times=True)
+
         except Exception as e:
             print(e)
 
